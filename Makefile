@@ -5,7 +5,7 @@ INFRASTRUCTURE_PATH = "./infrastructure"
 define tf_deploy
 cd $(INFRASTRUCTURE_PATH)
 terraform workspace select $1
-terraform apply --auto-approve
+terraform apply --auto-approve > /dev/null
 endef
 
 lambda-build:
@@ -15,7 +15,10 @@ tf-init:
 	cd $(INFRASTRUCTURE_PATH)
 	terraform init
 
-test:
+build:
+	cargo build --release
+
+test: build
 	cargo test --release
 
 lambda-deploy-development: lambda-build tf-init
