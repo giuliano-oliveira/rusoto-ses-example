@@ -1,0 +1,25 @@
+[package]
+name = "rusoto-ses-example"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+traits = { path = "../traits" }
+ses_mailer = { path = "../ses_mailer" }
+rusoto = "0.24.2"
+openssl = { version = "0.10", features = ["vendored"] } # Avoid trying to use shared openssl (used by rusoto_core)
+rusoto_core = "0.48.0"
+rusoto_ses = "0.48.0"
+tokio = "1.19.0"
+dotenv = "0.15.0"
+lambda_runtime = "0.5.1"
+serde_json = "1.0.81"
+serde = "1.0.137"
+serde-env = "0.0.2"
+askama = "0.11.1"
+
+
+
+[dev-dependencies]
+mockall = "0.11.1"
+async-trait = "0.1.56"

@@ -1,0 +1,11 @@
+/target
+.env
+node_modules
+builds/*
+
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+.terraform.lock.hcl
+
+.vscode

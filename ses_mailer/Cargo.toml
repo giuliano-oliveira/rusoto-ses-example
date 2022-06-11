@@ -1,0 +1,11 @@
+[package]
+name = "ses_mailer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+traits = { path = "../traits" }
+async-trait = "0.1.56"
+rusoto = "0.24.2"
+rusoto_core = "0.48.0"
+rusoto_ses = "0.48.0"
