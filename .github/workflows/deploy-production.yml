@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v3
       
       - uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.2.0
 
       - name: Instal deploy dependencies
         run: pip install ziglang cargo-lambda
