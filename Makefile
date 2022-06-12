@@ -4,6 +4,7 @@ INFRASTRUCTURE_PATH = "./infrastructure"
 
 define tf_deploy
 cd $(INFRASTRUCTURE_PATH)
+terraform workspace new $1 || true
 terraform workspace select $1
 terraform apply --auto-approve > /dev/null
 endef
