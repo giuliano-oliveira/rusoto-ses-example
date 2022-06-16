@@ -1,6 +1,6 @@
 .ONESHELL: # Enable cd to work properly
 
-INFRASTRUCTURE_PATH = "./infrastructure"
+INFRASTRUCTURE_PATH = ./infrastructure
 AWS_REGION ?= us-east-1
 .SILENT: tf-init
 
@@ -24,7 +24,7 @@ build:
 test: build
 	cargo test --release
 
-lambda-deploy-development: lambda-build tf-init
+lambda-deploy-development:
 	$(call tf_deploy,development)
-lambda-deploy-production: lambda-build tf-init
+lambda-deploy-production:
 	$(call tf_deploy,default)
