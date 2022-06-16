@@ -11,4 +11,9 @@ terraform {
       version = ">= 2.0"
     }
   }
+  backend "s3" {
+    bucket = "mybucket"
+    key    = "rusoto_ses_example"
+    region = "us-east-1"
+  }
 }
